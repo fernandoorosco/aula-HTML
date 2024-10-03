@@ -1,10 +1,10 @@
-from flask import Flask 
+from flask import (Flask,request) 
 
 app = Flask(__name__)
 
 @app.route("/", methods=('GET',))
 def index():
-    nome = 'Fernando'
+    nome = request.args.get('nome')
     return f"""<h1>Pagina Inicial</h1>"
     <p>Olá {nome}, que nome bonito
     """
