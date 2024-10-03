@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/", methods=('GET',))
 def index():
     nome = request.args.get('nome')
-    return f"""<h1>Pagina Inicial</h1>"
+    return f"""<h1>Pagina Inicial</h1>
     <p>Olá {nome}, que nome bonito
     """
     
