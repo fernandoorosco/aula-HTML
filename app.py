@@ -21,3 +21,10 @@ def contato():
 def sobre():
     return "<h1>sobre</h1>"
 
+@app.route("/area")
+def area():
+    altura=float(request.args.get('a'))
+    largura=float(request.args.get('l'))
+    return f"""<h1>A área informada l={largura} * a={altura} Area={largura*altura} <h1>"""
+
+
