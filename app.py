@@ -27,4 +27,28 @@ def area():
     largura=float(request.args.get('l'))
     return f"""<h1>A área informada l={largura} * a={altura} Area={largura*altura} <h1>"""
 
+    @app.route("/par", methods=('GET',))
+    def par():
+        numero = int (request.args.get('n'))
+        
+        if numero % 2 ==0:
+            return "<p> O numero é par<p>"
+        
+        if numero is None:
+            return "<p>Digite um numero válido<p>"
+
+        else:
+            return "<p>O numero é impar<p>"
+
+
+@app.route("/nome", methods=('GET',))
+    def nome():
+        n = request.args.get('n')
+        s = request.args.get('s')
+        return f"""<p>{n}, {s}<p>"""
+ 
+    
+
+    
+
 
