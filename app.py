@@ -26,9 +26,8 @@ def area(largura: float, comprimento: float):
     
     return f"""<h1>A área informada é l={largura} * a={comprimento} Area={largura*comprimento} <h1>"""
 
-    @app.route("/par", methods=('GET',))
-    def par():
-        numero = int (request.args.get('n'))
+    @app.route("/par/<float:numero>", methods=('GET',))
+    def par(numero : float):
         
         if numero % 2 ==0:
             return "<p> O numero é par<p>"
@@ -39,6 +38,10 @@ def area(largura: float, comprimento: float):
         else:
             return "<p>O numero é impar<p>"
 
+
+@app.route("/potencial/<int:n1>/<int:n2>", methods=('GET',))
+def potencial(n1: float, n2: float):
+    return f"""<h1>O primeiro numero {n1} elevado ao segundo numero {n2} é igual a {n1**n2} <h1>"""
 
  
     
