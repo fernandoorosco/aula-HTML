@@ -1,4 +1,4 @@
-from flask import (Flask,request) 
+from flask import (Flask, render_template, request) 
 
 app = Flask(__name__)
 
@@ -44,13 +44,10 @@ def potencial(n1: float, n2: float):
     return f"""<h1>O primeiro numero {n1} elevado ao segundo numero {n2} é igual a {n1**n2} <h1>"""
 
 @app.route("/tabuada/<int:numero>",methods=('GET',))
-def tabuada(numero: int):
-        resultado = f"<h1>Tabuada</h1>"
-        for i in range(11):
-            tb = numero * i
-            resultado += f"<ul><li><p>{numero} x {i} = {tb}</p></ul></li>"
-            
-        return resultado
+def tabuada(numero):
+
+    return render_template('tabuada.html', numero=numero)
+
 
 
 
