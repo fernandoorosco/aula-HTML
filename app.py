@@ -43,9 +43,12 @@ def area(largura: float, comprimento: float):
 def potencial(n1: float, n2: float):
     return f"""<h1>O primeiro numero {n1} elevado ao segundo numero {n2} é igual a {n1**n2} <h1>"""
 
-@app.route("/tabuada/<int:numero>",methods=('GET',))
-def tabuada(numero):
+@app.route("/tabuada")
+@app.route("/tabuada/<float:numero>",methods=('GET',))
+def tabuada(numero = None): 
 
+    if 'numero' in request.args:
+        numero = request.args.get('numero')
     return render_template('tabuada.html', numero=numero)
 
 
