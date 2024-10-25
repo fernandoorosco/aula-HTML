@@ -16,6 +16,9 @@ def index():
             <li><a href="/area/10.0/10.0">Àrea</a></li>
             <li><a href="/potencial/3/3">Potencial</a></li>
             <li><a href="/par/3.0">ImparPar</a></li>
+            <li><a href="/juros">Juros</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/imc">IMC</a></li>
         </ul>
     """
     
@@ -31,6 +34,9 @@ def galeria():
             <li><a href="/area/10.0/10.0">Àrea</a></li>
             <li><a href="/potencial/3/3">Potencial</a></li>
             <li><a href="/par/3.0">ImparPar</a></li>
+            <li><a href="/juros">Juros</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/imc">IMC</a></li>
         </ul>
     """
 
@@ -46,6 +52,9 @@ def contato():
             <li><a href="/area/10.0/10.0">Àrea</a></li>
             <li><a href="/potencial/3/3">Potencial</a></li>
             <li><a href="/par/3.0">ImparPar</a></li>
+            <li><a href="/juros">Juros</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/imc">IMC</a></li>
         </ul>
     """
 
@@ -61,6 +70,9 @@ def sobre():
             <li><a href="/area/10.0/10.0">Àrea</a></li>
             <li><a href="/potencial/3/3">Potencial</a></li>
             <li><a href="/par/3.0">ImparPar</a></li>
+            <li><a href="/juros">Juros</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/imc">IMC</a></li>
         </ul>
     """
 
@@ -77,6 +89,9 @@ def area(largura: float, comprimento: float):
             <li><a href="/area/10.0/10.0">Àrea</a></li>
             <li><a href="/potencial/3/3">Potencial</a></li>
             <li><a href="/par/3.0">ImparPar</a></li>
+            <li><a href="/juros">Juros</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/imc">IMC</a></li>
         </ul>
     """
 
@@ -94,6 +109,9 @@ def  par(numero : float):
             <li><a href="/area/10.0/10.0">Àrea</a></li>
             <li><a href="/potencial/3/3">Potencial</a></li>
             <li><a href="/par/3.0">ImparPar</a></li>
+            <li><a href="/juros">Juros</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/imc">IMC</a></li>
         </ul>
         """
         
@@ -108,6 +126,9 @@ def  par(numero : float):
             <li><a href="/area/10.0/10.0">Àrea</a></li>
             <li><a href="/potencial/3/3">Potencial</a></li>
             <li><a href="/par/3.0">ImparPar</a></li>
+            <li><a href="/juros">Juros</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/imc">IMC</a></li>
         </ul>
         """
 
@@ -122,6 +143,9 @@ def  par(numero : float):
             <li><a href="/area/10.0/10.0">Àrea</a></li>
             <li><a href="/potencial/3/3">Potencial</a></li>
             <li><a href="/par/3.0">ImparPar</a></li>
+            <li><a href="/juros">Juros</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/imc">IMC</a></li>
         </ul>
         """
 
@@ -138,6 +162,9 @@ def potencial(n1: float, n2: float):
             <li><a href="/area/10.0/10.0">Àrea</a></li>
             <li><a href="/potencial/3/3">Potencial</a></li>
             <li><a href="/par/3.0">ImparPar</a></li>
+            <li><a href="/juros">Juros</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/imc">IMC</a></li>
         </ul>
     """
 
@@ -178,6 +205,14 @@ def login(email = None, senha = None):
         senha = request.args.get('senha')
 
     return render_template('login.html', email=email, senha=senha)
+
+@app.route("/imc", methods=("GET",))
+def imc(peso = None, altura= None):
+  if "peso" and "altura" in request.args:
+    peso =float(request.args.get('peso')) 
+    altura=float(request.args.get('altura'))
+  
+  return render_template("imc.html", peso=peso, altura=altura)
     
 
 
