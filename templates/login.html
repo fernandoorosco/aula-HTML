@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form>
+    <ul>
+    
+    <li>
+    <label>LOGIN:</label><br>
+    <input type="email" name="email" /><br>
+    <input type="password" name="senha" /><br>
+    <input type="submit"/>
+
+
+    </ul>
+</form>
+{% if email and senha %}
+{% if email == 'aluno@senai.br' and senha == 'senai' %}
+<h1>Usúario logado</h1>
+<hr>
+{%else%}
+<h1>Senha e/ou Email incorreto(s).</h1>
+<hr>
+{% endif %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form>
+    <ul>
+    
+    <li>
+    <label>Digite o capital inicial:</label>
+    <input type="number" step=".01" name="capital" />
+
+    </li>
+    
+    <li>
+    <label>Digite o juros ao ano:</label>
+    <input type="number" step=".01" name="juros" />
+    </li>
+    
+    <li>
+    <label>Digite o tempo em anos:</label>
+    <input type="number" step=".01" name="anos" />
+    </li>
+
+    <li>
+        <label>Digite o aporte:</label>
+        <input type="number" step=".01" name="aporte" />
+        </li>
+
+    <li>
+        <label>Digite o tempo em meses:</label>
+        <input type="number" step=".01" name="anos" />
+        </li>
+
+    <button>Calcular</button>
+
+    </ul>
+</form>
+    <h1>Juros do Valor {{capital}}</h1>
+    <ul>
+        {% if capital %}
+        {% for p in range(1,2)%}
+            
+        <li>{{capital}} x {{juros}} x {{anos}} x {{aporte}} = {{capital*juros*anos*aporte}}</li>
+        {%endfor%}
+        {% endif %}
+    </ul>
+
+{% endblock %}
